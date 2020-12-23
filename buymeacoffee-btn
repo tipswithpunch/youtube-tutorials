@@ -1,0 +1,29 @@
+/* Remove underline from button */
+	.coffee-btn:hover, .coffee-btn a:hover, .coffee-btn a span:hover{
+		text-decoration: none;
+	}
+
+/* Adjust button */
+	.coffee-btn a span{
+		color: #fff;
+		background-color: #c76674;
+		padding: 10px 10px;
+		border-radius: 3px;
+		border: solid #000 0px;
+	}
+
+/* Adjust icon */
+	.coffee-btn a span:before{
+		content: '☕';
+		margin-right:5px;
+	}
+
+/* Adjust button on hover */
+	.coffee-btn a span:hover{
+		color: #c76674;
+		background-color: #fff;
+		padding: 10px 10px;
+		border-radius: 3px;
+		border: solid #000 1px;
+	}
+

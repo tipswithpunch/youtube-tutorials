@@ -1,0 +1,29 @@
+/* Adjust button */
+	.custom-menu-button a span{
+		color: #ffffff;  			/* Text color */
+		background-color: #38b6ff; 	/* Btn bg color */
+		padding: 10px 10px; 		/* Space around text */
+		border-radius: 3px; 		/* higher number = rounded corners */
+		border: solid #000000 0px; 	/* Border color & thickness */
+		max-height: 40px; 			/* Max height of button */
+	}
+
+/* Adjust icon */
+	.custom-menu-button a span:before{
+		content: '🖊️'; 				/* Change icon here */
+		margin-right:5px; 			/* space between icon & text on right */
+	}
+
+/* Adjust button on hover or remove the whole thing */
+	.custom-menu-button a span:hover{
+		color: #ffffff; 			/* Hover color */
+		background-color: #35a8ea; 	/* Btn hover bg color */
+		border: solid #000 0px; 	/* Hover border color & thickness */
+	}
+
+/* Remove default hover on links*/
+	.custom-menu-button:hover{
+		text-decoration: none;
+		color:#fff!important;
+	}
+

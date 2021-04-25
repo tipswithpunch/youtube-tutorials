@@ -1,5 +1,5 @@
 <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps.css'>
-<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script>
+<script onload="mapContent();" src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js" defer></script>
 
 <style>
 #map {
@@ -24,36 +24,38 @@
 
 <div id='map'></div>
 <script>
-	
-	var api_key = 'YOUR_API_KEY';
-	var latAndLong = {lat: 40.7391, lng: -73.99093}; 
-	var zoomLevel = 14;
-	var yourAddress = 'YOUR ADDRESS';
+	function mapContent(){
+		var api_key = 'YOUR_API_KEY';
+		var latAndLong = {lat: 40.7391, lng: -73.99093}; 
+		var zoomLevel = 14;
+		var yourAddress = 'YOUR_ADDRESS';
 
-	var map = tt.map({
-	    container: 'map',
-	    key: api_key,
-	    center: latAndLong,
-	    zoom: zoomLevel
-	});
+		var map = tt.map({
+		    container: 'map',
+		    key: api_key,
+		    center: latAndLong,
+		    zoom: zoomLevel
+		});
 
-	var marker = new tt.Marker().setLngLat(latAndLong).addTo(map);
- 	
- 	// FOR CUSTOM MARKER
-	//var customMarker = document.createElement('div');
-	//customMarker.id = 'marker';
-	//var marker = new tt.Marker({element: customMarker}).setLngLat(latAndLong).addTo(map);
+		var marker = new tt.Marker().setLngLat(latAndLong).addTo(map);
+	 	
+	 	// FOR CUSTOM MARKER
+		//var customMarker = document.createElement('div');
+		//customMarker.id = 'marker';
+		//var marker = new tt.Marker({element: customMarker}).setLngLat(latAndLong).addTo(map);
 
-	var popupOffsets = {
-	  top: [0, 0],
-	  bottom: [0, -70],
-	  'bottom-right': [0, -70],
-	  'bottom-left': [0, -70],
-	  left: [25, -35],
-	  right: [-25, -35]
-	}
+		var popupOffsets = {
+		  top: [0, 0],
+		  bottom: [0, -70],
+		  'bottom-right': [0, -70],
+		  'bottom-left': [0, -70],
+		  left: [25, -35],
+		  right: [-25, -35]
+		}
 
-	var popup = new tt.Popup({offset: popupOffsets}).setHTML(yourAddress);
-    	marker.setPopup(popup).togglePopup();
+		var popup = new tt.Popup({offset: popupOffsets}).setHTML(yourAddress);
+	    marker.setPopup(popup).togglePopup();
+
+    }
 
 </script>
